@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Diagnostics Hub | Premium</title>
+    
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-container">
+            <!-- Логотип слева -->
+            <a href="#" class="logo-link">
+                <i class="fa-solid fa-microchip"></i>
+                <span class="logo-text">PC<span class="highlight">Diag</span>Hub</span>
+            </a>
+
+            <!-- Правая часть: Навигация + Кнопки -->
+            <div class="header-right">
+                <!-- Меню навигации -->
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="#hero" class="nav-link active">Главная</a></li>
+                        <li><a href="#tools" class="nav-link">Инструменты</a></li>
+                        <li><a href="#about" class="nav-link">О нас</a></li>
+                        <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Кнопки управления -->
+                <div class="header-controls">
+                    <button id="theme-toggle" class="header-btn theme-btn" aria-label="Переключить тему">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <a href="#tools" class="header-btn catalog-btn">
+                        <i class="fa-solid fa-download"></i> Каталог
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="badge badge-glow">Версия 2.0 Stable</span>
+                    <h1 class="hero-title">
+                        Полная диагностика <br>
+                        <span class="gradient-text">вашего железа</span>
+                    </h1>
+                    <p class="hero-description">
+                        Единый хаб для запуска профессиональных утилит. Мониторинг температур, 
+                        стресс-тесты видеокарты, проверка памяти и глубокий анализ накопителей 
+                        в безопасной среде симуляции.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#tools" class="btn btn-primary btn-lg glow-btn">
+                            <i class="fa-solid fa-play"></i> Перейти к тестам
+                        </a>
+                        <a href="#about" class="btn btn-outline btn-lg">
+                            Узнать больше
+                        </a>
+                    </div>
+
+                    <div class="hero-stats-row">
+                        <div class="stat-pill"><i class="fa-solid fa-check-circle"></i><span>12+ Утилит</span></div>
+                        <div class="stat-pill"><i class="fa-solid fa-shield-halved"></i><span>100% Безопасно</span></div>
+                        <div class="stat-pill"><i class="fa-solid fa-clock"></i><span>24/7 Доступ</span></div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="glow-orb"></div>
+                    <div class="float-card card-cpu">
+                        <div class="fc-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <div class="fc-info"><span class="fc-label">CPU Load</span><span class="fc-value">12%</span></div>
+                    </div>
+                    <div class="float-card card-ram">
+                        <div class="fc-icon"><i class="fa-solid fa-memory"></i></div>
+                        <div class="fc-info"><span class="fc-label">RAM Status</span><span class="fc-value status-ok">Optimal</span></div>
+                    </div>
+                    <div class="float-card card-gpu">
+                        <div class="fc-icon"><i class="fa-solid fa-vr-cardboard"></i></div>
+                        <div class="fc-info"><span class="fc-label">GPU Temp</span><span class="fc-value">42°C</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOOLS SECTION -->
+        <section id="tools" class="tools-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Арсенал утилит</h2>
+                    <p style="color:var(--text-muted)">Выберите категорию или запустите конкретный инструмент</p>
+                </div>
+
+                <div class="filters-wrapper">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="cpu">CPU</button>
+                    <button class="filter-btn" data-filter="gpu">GPU</button>
+                    <button class="filter-btn" data-filter="ram">RAM</button>
+                    <button class="filter-btn" data-filter="disk">Disk</button>
+                    <button class="filter-btn" data-filter="sys">System</button>
+                    <button class="filter-btn" data-filter="net">Net</button>
+                </div>
+
+                <div class="tools-grid">
+                    <!-- Card 1: CPU-Z -->
+                    <article class="tool-card" data-category="cpu">
+                        <div class="card-header">
+                            <div class="icon-wrapper blue"><i class="fa-solid fa-microchip"></i></div>
+                            <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <h3>CPU-Z</h3>
+                        <p class="desc">Информация о процессоре и памяти.</p>
+                        <button class="run-simulation" data-tool="CPU-Z">Запустить</button>
+                    </article>
+
+                    <!-- Card 2: HWMonitor -->
+                    <article class="tool-card" data-category="sys">
+                        <div class="card-header">
+                            <div class="icon-wrapper green"><i class="fa-solid fa-temperature-half"></i></div>
+                            <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <h3>HWMonitor</h3>
+                        <p class="desc">Температуры и напряжения.</p>
+                        <button class="run-simulation" data-tool="HWMonitor">Запустить</button>
+                    </article>
+
+                    <!-- Card 3: CrystalDiskInfo -->
+                    <article class="tool-card" data-category="disk">
+                        <div class="card-header">
+                            <div class="icon-wrapper purple"><i class="fa-solid fa-hard-drive"></i></div>
+                            <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <h3>CrystalDiskInfo</h3>
+                        <p class="desc">Здоровье SSD/HDD дисков.</p>
+                        <button class="run-simulation" data-tool="CrystalDiskInfo">Запустить</button>
+                    </article>
+
+                    <!-- Card 4: FurMark -->
+                    <article class="tool-card" data-category="gpu">
+                        <div class="card-header">
+                            <div class="icon-wrapper red"><i class="fa-solid fa-fire"></i></div>
+                            <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <h3>FurMark</h3>
+                        <p class="desc">Стресс-тест видеокарты.</p>
+                        <button class="run-simulation" data-tool="FurMark">Запустить</button>
+                    </article>
+
+                    <!-- Card 5: MemTest86 -->
+                    <article class="tool-card" data-category="ram">
+                        <div class="card-header">
+                            <div class="icon-wrapper orange"><i class="fa-solid fa-memory"></i></div>
+                            <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <h3>MemTest86</h3>
+                        <p class="desc">Тест оперативной памяти.</p>
+                        <button class="run-simulation" data-tool="MemTest86">Запустить</button>
+                    </article>
+
+                    <!-- Card 6: AIDA64 -->
+                    <article class="tool-card" data-category="sys">
+                        <div class="card-header">
+                            <div class="icon-wrapper gray"><i class="fa-solid fa-list-check"></i></div>
+                            <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <h3>AIDA64</h3>
+                        <p class="desc">Полная диагностика системы.</p>
+                        <button class="run-simulation" data-tool="AIDA64">Запустить</button>
+                    </article>
+
+                    <!-- Card 7: Prime95 -->
+                    <article class="tool-card" data-category="cpu">
+                        <div class="card-header">
+                            <div class="icon-wrapper blue"><i class="fa-solid fa-bolt"></i></div>
+                            <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <h3>Prime95</h3>
+                        <p class="desc">Экстремальная нагрузка на CPU.</p>
+                        <button class="run-simulation" data-tool="Prime95">Запустить</button>
+                    </article>
+
+                    <!-- Card 8: 3DMark -->
+                    <article class="tool-card" data-category="gpu">
+                        <div class="card-header">
+                            <div class="icon-wrapper red"><i class="fa-solid fa-gamepad"></i></div>
+                            <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <h3>3DMark</h3>
+                        <p class="desc">Игровой бенчмарк GPU.</p>
+                        <button class="run-simulation" data-tool="3DMark">Запустить</button>
+                    </article>
+
+                    <!-- Card 9: OCCT -->
+                    <article class="tool-card" data-category="sys">
+                        <div class="card-header">
+                            <div class="icon-wrapper purple"><i class="fa-solid fa-car-battery"></i></div>
+                            <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <h3>OCCT</h3>
+                        <p class="desc">Тест блока питания.</p>
+                        <button class="run-simulation" data-tool="OCCT">Запустить</button>
+                    </article>
+
+                    <!-- Card 10: HD Tune -->
+                    <article class="tool-card" data-category="disk">
+                        <div class="card-header">
+                            <div class="icon-wrapper purple"><i class="fa-solid fa-gauge-high"></i></div>
+                            <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <h3>HD Tune</h3>
+                        <p class="desc">Скорость диска и bad-блоки.</p>
+                        <button class="run-simulation" data-tool="HD Tune">Запустить</button>
+                    </article>
+
+                    <!-- Card 11: PingPlotter -->
+                    <article class="tool-card" data-category="net">
+                        <div class="card-header">
+                            <div class="icon-wrapper green"><i class="fa-solid fa-network-wired"></i></div>
+                            <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <h3>PingPlotter</h3>
+                        <p class="desc">Анализ пинга и потерь пакетов.</p>
+                        <button class="run-simulation" data-tool="PingPlotter">Запустить</button>
+                    </article>
+
+                    <!-- Card 12: UserBenchmark -->
+                    <article class="tool-card" data-category="sys">
+                        <div class="card-header">
+                            <div class="icon-wrapper gray"><i class="fa-solid fa-ranking-star"></i></div>
+                            <button class="btn-fav"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <h3>UserBenchmark</h3>
+                        <p class="desc">Сравнение скорости ПК.</p>
+                        <button class="run-simulation" data-tool="UserBenchmark">Запустить</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Почему выбирают нас?</h2>
+                    <p class="section-subtitle">Мы создали идеальное пространство для работы с железом</p>
+                </div>
+
+                <div class="bento-grid">
+                    <div class="bento-card feature-main">
+                        <div class="card-content">
+                            <h3>PC Diag Hub <span class="highlight">v2.0</span></h3>
+                            <p>Агрегатор лучших утилит для системных администраторов и геймеров. Всё под рукой в одном интерфейсе.</p>
+                            <div class="stat-badge">
+                                <span class="version">v2.0</span>
+                                <span class="dot"></span>
+                                <span class="status">Online</span>
+                            </div>
+                        </div>
+                        <div class="card-visual main-visual"><i class="fa-solid fa-server"></i></div>
+                    </div>
+
+                    <div class="bento-card feature-item security-card">
+                        <div class="icon-box gradient-blue"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="text-box"><h4>100% Безопасно</h4><p>Только официальные версии без вирусов.</p></div>
+                    </div>
+
+                    <div class="bento-card feature-item speed-card">
+                        <div class="icon-box gradient-purple"><i class="fa-solid fa-bolt"></i></div>
+                        <div class="text-box"><h4>Мгновенно</h4><p>Симуляция работы за миллисекунды.</p></div>
+                    </div>
+
+                    <div class="bento-card feature-wide db-card">
+                        <div class="text-box"><h4>Актуальная база</h4><p>Регулярное обновление списка ПО и описаний.</p></div>
+                        <div class="card-visual wide-visual"><i class="fa-solid fa-database"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Частые вопросы</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-icon"><i class="fa-solid fa-circle-question"></i></div>
+                        <div class="faq-content">
+                            <h3>Это реальные программы?</h3>
+                            <p>Нет, данный сайт является демонстрационным интерфейсом. Кнопки "Запуск" имитируют работу программ.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-icon"><i class="fa-solid fa-download"></i></div>
+                        <div class="faq-content">
+                            <h3>Где скачать оригиналы?</h3>
+                            <p>Мы рекомендуем скачивать утилиты только с официальных сайтов разработчиков.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-icon"><i class="fa-solid fa-plus-circle"></i></div>
+                        <div class="faq-content">
+                            <h3>Как добавить свою утилиту?</h3>
+                            <p>Проект открыт для предложений. Свяжитесь с нами через раздел контактов.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <a href="#" class="logo-link footer-logo">
+                    <i class="fa-solid fa-microchip"></i>
+                    <span>PC<span class="highlight">Diag</span>Hub</span>
+                </a>
+                <p class="footer-desc">Ваш надежный помощник в мире компьютерной диагностики.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col links-col">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="#hero">Главная</a></li>
+                    <li><a href="#tools">Каталог</a></li>
+                    <li><a href="#about">О проекте</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col legal-col">
+                <h4>Информация</h4>
+                <ul>
+                    <li><a href="#">Соглашение</a></li>
+                    <li><a href="#">Конфиденциальность</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 PC Diagnostics Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="simulation-modal" class="modal-backdrop">
+        <div class="modal-container">
+            <button class="modal-close">&times;</button>
+            <div class="step-loading">
+                <div class="loader-ring"></div>
+                <h3 id="modal-tool-name">Запуск...</h3>
+                <div class="progress-track"><div class="progress-bar" id="modal-progress"></div></div>
+                <p id="modal-status">Инициализация...</p>
+            </div>
+            <div class="step-result">
+                <i class="fa-solid fa-check-circle success-icon"></i>
+                <h3>Готово</h3>
+                <div class="result-card">
+                    <div class="result-row"><span>Статус:</span><span class="status-ok">OK</span></div>
+                    <div class="result-row"><span>Ошибок:</span><span>0</span></div>
+                </div>
+                <button class="run-simulation close-modal-btn">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
